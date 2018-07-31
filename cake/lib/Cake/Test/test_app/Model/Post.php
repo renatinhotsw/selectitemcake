@@ -25,4 +25,18 @@ class Post extends AppModel {
 
 	public $useTable = 'posts';
 
+	public function beforeSave($options = array())
+{
+	debugger::dump($this->data);
+	print 'PASSOU NO MODEL';
+
+		if(!empty($this->data['Model']['campoDoArquivo']['name'])) {
+        $this->data['Model']['campoDoArquivo'] = $this->upload($this->data['Model']['campoDoArquivo']);
+    } else {
+        unset($this->data['Model']['campoDoArquivo']);
+    }
+}
+
+
+
 }
