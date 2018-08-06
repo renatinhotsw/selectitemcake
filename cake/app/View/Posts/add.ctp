@@ -6,19 +6,14 @@
     <h1>Adicionar Post</h1>
   </head>
   <body>
-      <?php $this->Form->create();?>
-      <?php echo $this->Form->input('path'); ?>
-      <?php echo $this->Form->input('created'); ?>
-      <?php echo $this->Form->input('modified'); ?>
-        
-      <div class="buttons clearfix">
-        <button type="submit" class="positive">
-        <span class="icon-wrapper"><img src="path/to/tickmark.png" alt="" title="" /></span>
-            Save Item
-      </button>
-    </div>
-    <?php
-       $this->Form->end();
+      <?php
+        echo $this->Form->create('Post');
+        echo $this->Form->input('title');
+        echo $this->Form->input('body',array('rows'=>3));
+        echo $this->Form->end('Salvar');
+
+
        ?>
+
   </body>
 </html>

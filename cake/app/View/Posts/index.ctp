@@ -4,35 +4,31 @@
     <meta charset="utf-8">
     <title>Posts do BLog</title>
   </head>
-  <?php echo $this->Html->link('Add Post', array('controller'=>'posts','action'=>'add')) ?>
+<?php echo $this->Html->link('Add Post', array('controller'=>'posts','action'=>'add')); ?>
+
 <table>
 <tr>
   <th>id</th>
-  <th>path</th>
-  <th>created</th>
-  <th>modified</th>
+  <th>title</th>
+  <th>body</th>
 </tr>
   <?php foreach ($posts as $post): ?>
-
 <tr>
   <td>
-
-       <!--SELECT INPUT BD LISTO TODOS !-->
-
-       <?php
-
-            echo $this->Form->input('lista',
-                        array('options'=>$posts,
-                        'value' =>2
-
-                      ));
-        // NO VALUE EU ESPECIFICO O VALOR DO ITEM A SER SELECIONADO
-
-        ?>
+        <?php echo $post['Post']['id'] ?>
 
   </td>
 
+  <td>
+    <?php echo $post['Post']['title'] ?>
+  </td>
+
+  <td>
+    <?php echo $post['Post']['body'] ?>
+  </td>
+
 </tr>
+
 <?php endforeach; ?>
 
 
