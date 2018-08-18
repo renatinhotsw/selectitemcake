@@ -1,6 +1,5 @@
 <?php
 
-
 class PostsModel extends Model {
     public $name = 'Post';
 

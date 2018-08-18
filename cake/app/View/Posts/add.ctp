@@ -10,10 +10,8 @@
         echo $this->Form->create('Post');
         echo $this->Form->input('title');
         echo $this->Form->input('body',array('rows'=>3));
+        echo $this->Form->input('id_user',array('type'=>'number'));
         echo $this->Form->end('Salvar');
-
-
        ?>
-
   </body>
 </html>
